@@ -79,7 +79,7 @@ def new_card(name: str, track: str) -> dict[str, Any]:
 def load_card(path: Path) -> dict[str, Any]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
-        raise ValueError("method card must be a JSON object")
+        raise TypeError("method card must be a JSON object")
     return payload
 
 
